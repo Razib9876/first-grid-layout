@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Grid Layout</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      height: 100vh;
+    }
+
+    .item {
+      padding: 20px;
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .item1 {
+      background-color: #e0f7fa;
+      border-color: #00bcd4;
+    }
+
+    .right-side {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .top-right {
+      background-color: #f8bbd0;
+      border-color: #ec407a;
+    }
+
+    .bottom-right {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .item3 {
+      background-color: #dcedc8;
+      border-color: #8bc34a;
+    }
+
+    .item4 {
+      background-color: #ffe082;
+      border-color: #ffca28;
+    }
+
+    @media (max-width: 576px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+      }
+
+      .right-side {
+        grid-template-rows: auto;
+      }
+
+      .bottom-right {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (min-width: 576px) and (max-width: 800px){
+       .grid-container {
+        grid-template-columns: 1fr;
+      }
+      .right-side {
+        grid-template-rows: auto;
+      }
+
+      .bottom-right {
+        grid-template-columns: 1fr 1fr;
+      }
+
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grid-container">
+    <div class="item item1">Item 1 (Left side, 50%)</div>
+
+    <div class="right-side">
+      <div class="item top-right">Item 2 (Top Right)</div>
+
+      <div class="bottom-right">
+        <div class="item item3">Item 3 (Bottom Right Left)</div>
+        <div class="item item4">Item 4 (Bottom Right Right)</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

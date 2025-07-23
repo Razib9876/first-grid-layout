@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 5px;
+            padding: 5%;
+            box-sizing:border-box ;
+        }
+        body, html{
+            background-color: aqua;
+            height: 100%;
+        }
+        .container{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            gap: 20px;
+            border: 1px solid blue;
+            border-radius: 10px;
+        }
+          .left {
+    background-color: #575757;
+    flex: 1;             /* 1 part */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 2rem;
+    border-radius: 20px;
+  }
+
+  .right {
+    background-color: #ffc5c5;
+    flex: 2;             /* 2 parts */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 2rem;
+    border-radius: 20px;
+  }
+ @media (max-width: 768px) {
+    .container, {
+      flex-direction: column;
+      height: auto;      /* adapt height */
+      min-height: 100vh; /* at least full viewport height */
+      border-radius: 0;
+    }
+    .left, .right {
+      flex: none;        /* remove flex grow/shrink */
+      width: 100%;
+      height: 50vh;      /* each takes half viewport height */
+      font-size: 1.5rem;
+    }
+   
+  }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">Left</div>
+        <div class="right">Right</div>
+    </div>
+</body>
+</html>
